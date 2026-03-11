@@ -128,6 +128,22 @@ p {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
+.cart-trigger{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.cart-trigger i,
+#cartCount {
+  color: var(--accent);
+}
+
+#cartCount {
+  font-weight: 600;
+  margin-left: 2px;
+}
+
 .header .inner {
   display: flex;
   align-items: center;
@@ -727,6 +743,10 @@ p {
   margin-bottom: 16px;
 }
 
+.detail-hero .hero-btns {
+  align-items: center;
+}
+
 .detail-subcopy {
   color: #f7ede3;
   font-size: 1.2rem;
@@ -937,4 +957,361 @@ p {
   .related-grid {
     grid-template-columns: 260px;
   }
+}
+
+/* =========================
+   HEADER RIGHT / CART
+========================= */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cart-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 72px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.3s ease;
+}
+
+.cart-trigger:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-2px);
+}
+
+#cartCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* =========================
+   PRODUCT ACTIONS
+========================= */
+.product-link {
+  display: block;
+  color: inherit;
+}
+
+.product-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.product-btn {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.buy-now-btn {
+  background: linear-gradient(135deg, #8B0E1A 0%, #a91524 100%);
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(139, 14, 26, 0.18);
+}
+
+.buy-now-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(139, 14, 26, 0.24);
+}
+
+.cart-btn,
+.gift-cart-btn {
+  border: 1px solid rgba(139, 14, 26, 0.18);
+}
+
+.cart-btn:hover,
+.gift-cart-btn:hover {
+  transform: translateY(-2px);
+}
+
+.gift-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   CART DRAWER
+========================= */
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  z-index: 2200;
+}
+
+.cart-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(420px, 100%);
+  height: 100vh;
+  background: #fff;
+  color: #1C1C1E;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.18);
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+  z-index: 2300;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-drawer.show {
+  transform: translateX(0);
+}
+
+.cart-drawer-header,
+.cart-drawer-footer {
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.cart-drawer-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: none;
+  margin-top: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.cart-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-drawer-header h3 {
+  font-size: 1.3rem;
+  color: #111;
+}
+
+.cart-close {
+  font-size: 2rem;
+  line-height: 1;
+  color: #333;
+}
+
+.cart-drawer-body {
+  padding: 20px 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.cart-empty {
+  color: #666;
+}
+
+.cart-item {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.cart-item h4 {
+  font-size: 1rem;
+  color: #111;
+  margin-bottom: 6px;
+}
+
+.cart-item p {
+  color: #666;
+  font-size: 0.92rem;
+  margin-bottom: 10px;
+}
+
+.cart-item button {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #f3f3f3;
+  color: #222;
+}
+
+.cart-clear-btn,
+.cart-order-btn {
+  flex: 1;
+  padding: 14px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.cart-clear-btn {
+  background: #f1f1f1;
+  color: #222;
+}
+
+.cart-order-btn {
+  background: linear-gradient(135deg, #8B0E1A 0%, #a91524 100%);
+  color: #fff;
+}
+
+/* =========================
+   RESPONSIVE ADDITION
+========================= */
+@media (max-width: 1024px) {
+  .header-right {
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gift-btns {
+    justify-content: center;
+  }
+
+  .product-actions {
+    gap: 8px;
+  }
+
+  .cart-trigger {
+    padding: 10px 14px;
+  }
+}
+
+/* =========================
+   TOAST MESSAGE
+========================= */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%) translateY(20px);
+  min-width: 280px;
+  max-width: min(90vw, 420px);
+  padding: 14px 20px;
+  border-radius: 999px;
+  background: rgba(15, 26, 43, 0.94);
+  color: #f7f2ec;
+  font-size: 0.95rem;
+  text-align: center;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.24);
+  border: 1px solid rgba(183, 110, 121, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s ease;
+  z-index: 2600;
+  pointer-events: none;
+}
+
+.toast.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* =========================
+   CART UPGRADE
+========================= */
+.cart-item-top,
+.cart-item-bottom,
+.cart-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cart-item-top {
+  margin-bottom: 6px;
+}
+
+.cart-item-bottom {
+  margin-top: 10px;
+}
+
+.cart-item-qty {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.cart-item-price {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.cart-total {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.cart-total span {
+  color: #666;
+}
+
+.cart-total strong {
+  font-size: 1.05rem;
+  color: #111;
+}
+
+/* =========================
+   TOAST UPGRADE
+========================= */
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+}
+
+.toast-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(183, 110, 121, 0.18);
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.toast-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.toast-content strong {
+  color: #fffaf5;
+  font-size: 0.94rem;
+  font-weight: 600;
+}
+
+.toast-content span {
+  color: #d6cfc7;
+  font-size: 0.82rem;
 }

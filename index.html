@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VELORA | Premium Non-Alcohol Cocktail</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
   <!-- HEADER -->
@@ -29,6 +31,11 @@
           <li><a href="#sns">SNS</a></li>
         </ul>
       </nav>
+
+      <button class="cart-trigger" id="cartTrigger">
+        <i class="fa-solid fa-cart-plus"></i>
+        <span id="cartCount">0</span>
+      </button>
     </div>
   </header>
 
@@ -318,10 +325,38 @@
           시즌 한정 패키지와 프리미엄 기프트 박스를 통해
           특별한 날을 위한 선물 경험까지 제안합니다.
         </p>
-        <a href="#lineup" class="btn primary">Line-up 다시 보기</a>
+        <div class="gift-btns">
+        <a href="#lineup" class="btn secondary">Line-up 다시 보기</a>
+          <button
+          class="btn primary gift-cart-btn"
+          type="button"
+          data-name="VELORA Gift Set"
+          data-desc="시즌 한정 기프트 박스">
+          Gift Set 담기
+          </button>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- CART DRAWER -->
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+  <div class="cart-drawer-header">
+    <h3>장바구니</h3>
+    <button class="cart-close" id="cartClose" type="button" aria-label="장바구니 닫기">×</button>
+  </div>
+
+  <div class="cart-drawer-body" id="cartItems">
+    <p class="cart-empty">아직 담긴 상품이 없습니다.</p>
+  </div>
+
+  <div class="cart-drawer-footer">
+    <button class="cart-clear-btn" id="cartClear" type="button">전체 비우기</button>
+    <button class="cart-order-btn" type="button">주문하기</button>
+  </div>
+</aside>
+
+<div class="cart-overlay" id="cartOverlay"></div>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -333,6 +368,8 @@
   </footer>
 
   <button id="topBtn" title="맨 위로 이동">↑</button>
+
+  <div class="toast" id="toast"></div>
 
   <script src="script.js"></script>
 </body>

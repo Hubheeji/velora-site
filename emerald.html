@@ -5,20 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Emerald Spark | VELORA</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
 <header class="header">
   <div class="inner">
-    <h1 class="logo"><a href="index.html">VELORA</a></h1>
-    <nav class="nav">
-      <ul>
-        <li><a href="index.html#hero">Home</a></li>
-        <li><a href="index.html#concept">Concept</a></li>
-        <li><a href="index.html#lineup">Line-up</a></li>
-        <li><a href="index.html#gift">Gift</a></li>
-      </ul>
-    </nav>
+    <h1 class="logo">
+      <a href="index.html">VELORA</a>
+    </h1>
+
+    <div class="header-right">
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#concept">Concept</a></li>
+          <li><a href="index.html#lineup">Line-up</a></li>
+          <li><a href="index.html#gift">Gift</a></li>
+        </ul>
+      </nav>
+
+      <button class="cart-trigger" id="cartTrigger" type="button" aria-label="장바구니 열기">
+        <i class="fa-solid fa-cart-plus"></i>
+        <span id="cartCount">0</span>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -38,7 +49,22 @@
       </p>
 
       <div class="hero-btns">
-        <a href="index.html#lineup" class="btn primary">라인업으로 돌아가기</a>
+        <button
+          class="btn primary buy-now-btn"
+          type="button"
+          data-name="Emerald Spark"
+          data-desc="라임 · 바질 · 그린애플">
+          구매하기
+        </button>
+
+        <button
+          class="btn secondary cart-btn"
+          type="button"
+          data-name="Emerald Spark"
+          data-desc="라임 · 바질 · 그린애플">
+          장바구니 담기
+        </button>
+
         <a href="#detail-info" class="btn secondary">상세 정보 보기</a>
       </div>
     </div>
@@ -94,7 +120,7 @@
     <div class="preview-list">
       <article class="preview-item">
         <div class="preview-image">
-          <img src="images/emerald.png" alt="Emerald Spark 연출 이미지" class="zoomable" />
+          <img src="images/Emerald-Cup.png" alt="Emerald Spark 연출 이미지" class="zoomable" />
         </div>
         <div class="preview-text">
           <h3>Fresh Herbal Spark</h3>
@@ -229,10 +255,28 @@
   </div>
 </footer>
 
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+  <div class="cart-drawer-header">
+    <h3>장바구니</h3>
+    <button class="cart-close" id="cartClose" type="button" aria-label="장바구니 닫기">×</button>
+  </div>
+
+  <div class="cart-drawer-body" id="cartItems">
+    <p class="cart-empty">아직 담긴 상품이 없습니다.</p>
+  </div>
+
+  <div class="cart-drawer-footer">
+    <button class="cart-clear-btn" id="cartClear" type="button">전체 비우기</button>
+    <button class="cart-order-btn" type="button">주문하기</button>
+  </div>
+</aside>
+
 <div class="image-modal" id="imageModal">
   <span class="image-modal-close" id="imageModalClose">&times;</span>
   <img class="image-modal-content" id="imageModalImg" alt="확대 이미지" />
 </div>
+
+<div class="toast" id="toast"></div>
 
 <script src="script.js"></script>
 </body>
