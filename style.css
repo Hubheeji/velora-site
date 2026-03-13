@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'MuseumCulturalFoundationClassic';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/국립박물관문화재단클래식L.woff') format('woff');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MuseumCulturalFoundationClassic';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/국립박물관문화재단클래식M.woff') format('woff');
+  font-weight: 500;
+  font-display: swap;
+}
+
 /* =========================
    RESET
 ========================= */
@@ -30,33 +44,19 @@ button {
   font: inherit;
 }
 
-/* =========================
-   Base
-========================= */
-
-body {
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    "Malgun Gothic",
-    "Apple SD Gothic Neo",
-    "Noto Sans KR",
-    sans-serif;
-}
-
 
 /* =========================
    Typography
 ========================= */
 
-h2, h3 {
-  font-family: 'Playfair Display',
-    -apple-system,
-    BlinkMacSystemFont,
-    "Malgun Gothic",
-    "Apple SD Gothic Neo",
-    sans-serif;
+h2 {
+  font-family: 'MuseumCulturalFoundationClassic', "Noto Sans KR", sans-serif;
+  font-weight: 500;
+}
+
+h3 {
+  font-family: 'MuseumCulturalFoundationClassic', "Noto Sans KR", sans-serif;
+  font-weight: 300;
 }
 
 /* Hero 타이틀 */
@@ -90,7 +90,7 @@ html {
 }
 
 body {
-  font-family: "Pretendard", "Noto Sans KR", sans-serif;
+  font-family: 'MuseumCulturalFoundationClassic', "Noto Sans KR", sans-serif;
   background:
     radial-gradient(circle at top left, rgba(139, 14, 26, 0.08), transparent 25%),
     radial-gradient(circle at top right, rgba(183, 110, 121, 0.06), transparent 20%),
